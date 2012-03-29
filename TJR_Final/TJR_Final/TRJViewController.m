@@ -7,6 +7,7 @@
 //
 
 #import "TRJViewController.h"
+#import "tank.h"
 
 @implementation TRJViewController
 
@@ -21,7 +22,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	//create array of tanks
+    tankList = [NSMutableArray arrayWithObject:nil];
+    CGRect frame = CGRectMake(0.,0.,100.,100.);
+    for(int i=0; i<6; i++)
+    {
+
+        tank *newTank = [[tank alloc] initWithFrame:frame];
+        [tankList addObject: newTank];
+    }
 }
 
 - (void)viewDidUnload
