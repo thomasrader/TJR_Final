@@ -21,6 +21,7 @@
 		E94E13851523EA9E00D5BCF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94E13631523EA9E00D5BCF1 /* Foundation.framework */; };
 		E94E138D1523EA9E00D5BCF1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E94E138B1523EA9E00D5BCF1 /* InfoPlist.strings */; };
 		E94E13901523EA9E00D5BCF1 /* TJR_FinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E138F1523EA9E00D5BCF1 /* TJR_FinalTests.m */; };
+		E94E139B1523EB3400D5BCF1 /* tank.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E139A1523EB3400D5BCF1 /* tank.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		E94E138C1523EA9E00D5BCF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E94E138E1523EA9E00D5BCF1 /* TJR_FinalTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TJR_FinalTests.h; sourceTree = "<group>"; };
 		E94E138F1523EA9E00D5BCF1 /* TJR_FinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJR_FinalTests.m; sourceTree = "<group>"; };
+		E94E13991523EB3400D5BCF1 /* tank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tank.h; sourceTree = "<group>"; };
+		E94E139A1523EB3400D5BCF1 /* tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tank.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				E94E13731523EA9E00D5BCF1 /* MainStoryboard_iPhone.storyboard */,
 				E94E13761523EA9E00D5BCF1 /* MainStoryboard_iPad.storyboard */,
 				E94E13791523EA9E00D5BCF1 /* TRJViewController.h */,
+				E94E13991523EB3400D5BCF1 /* tank.h */,
+				E94E139A1523EB3400D5BCF1 /* tank.m */,
 				E94E137A1523EA9E00D5BCF1 /* TRJViewController.m */,
 				E94E13681523EA9E00D5BCF1 /* Supporting Files */,
 			);
@@ -264,6 +269,7 @@
 				E94E136E1523EA9E00D5BCF1 /* main.m in Sources */,
 				E94E13721523EA9E00D5BCF1 /* TRJAppDelegate.m in Sources */,
 				E94E137B1523EA9E00D5BCF1 /* TRJViewController.m in Sources */,
+				E94E139B1523EB3400D5BCF1 /* tank.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
