@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TankBody.h"
 
 @interface tank : UIView
 {
-    TankBody *myBody;
+
     
 }
 

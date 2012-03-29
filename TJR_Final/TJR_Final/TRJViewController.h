@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "tank.h"
+
 
 @interface TRJViewController : UIViewController{
     NSMutableArray *tankList;
