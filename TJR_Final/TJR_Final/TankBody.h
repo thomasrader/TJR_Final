@@ -1,5 +1,5 @@
 //
-//  TRJViewController.h
+//  TankBody.h
 //  TJR_Final
 //
 //  Created by default on 3/28/12.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "tank.h"
 
-@interface TRJViewController : UIViewController
+@interface TankBody : UIView
 
 @end
