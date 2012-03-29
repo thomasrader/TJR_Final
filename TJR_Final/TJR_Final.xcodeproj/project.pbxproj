@@ -22,6 +22,7 @@
 		E94E138D1523EA9E00D5BCF1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E94E138B1523EA9E00D5BCF1 /* InfoPlist.strings */; };
 		E94E13901523EA9E00D5BCF1 /* TJR_FinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E138F1523EA9E00D5BCF1 /* TJR_FinalTests.m */; };
 		E94E139B1523EB3400D5BCF1 /* tank.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E139A1523EB3400D5BCF1 /* tank.m */; };
+		E94E13A11523F75100D5BCF1 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E13A01523F75100D5BCF1 /* Hero.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		E94E138F1523EA9E00D5BCF1 /* TJR_FinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJR_FinalTests.m; sourceTree = "<group>"; };
 		E94E13991523EB3400D5BCF1 /* tank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tank.h; sourceTree = "<group>"; };
 		E94E139A1523EB3400D5BCF1 /* tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tank.m; sourceTree = "<group>"; };
+		E94E139F1523F75100D5BCF1 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		E94E13A01523F75100D5BCF1 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				E94E137A1523EA9E00D5BCF1 /* TRJViewController.m */,
 				E94E13991523EB3400D5BCF1 /* tank.h */,
 				E94E139A1523EB3400D5BCF1 /* tank.m */,
+				E94E139F1523F75100D5BCF1 /* Hero.h */,
+				E94E13A01523F75100D5BCF1 /* Hero.m */,
 				E94E13681523EA9E00D5BCF1 /* Supporting Files */,
 			);
 			path = TJR_Final;
@@ -270,6 +275,7 @@
 				E94E13721523EA9E00D5BCF1 /* TRJAppDelegate.m in Sources */,
 				E94E137B1523EA9E00D5BCF1 /* TRJViewController.m in Sources */,
 				E94E139B1523EB3400D5BCF1 /* tank.m in Sources */,
+				E94E13A11523F75100D5BCF1 /* Hero.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

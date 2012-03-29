@@ -1,28 +1,27 @@
 //
-//  tank.m
+//  Hero.m
 //  TJR_Final
 //
 //  Created by default on 3/28/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "tank.h"
+#import "Hero.h"
 
-@implementation tank
+@implementation Hero
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self doLayout];
-        
     }
     return self;
 }
 
 -(void) doLayout
 {
-    self.backgroundColor = [UIColor blackColor];
+    self.backgroundColor = [UIColor grayColor];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -1,5 +1,5 @@
 //
-//  TRJViewController.h
+//  Hero.h
 //  TJR_Final
 //
 //  Created by default on 3/28/12.
@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Hero;
 
+@interface Hero : UIView
 
-@interface TRJViewController : UIViewController{
-    NSMutableArray *tankList;
-    Hero *myHero;
-}
+-(void) doLayout;
+
 
 @end

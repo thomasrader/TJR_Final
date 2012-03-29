@@ -8,6 +8,8 @@
 
 #import "TRJViewController.h"
 #import "tank.h"
+#import "Hero.h"
+
 
 @implementation TRJViewController
 
@@ -32,7 +34,18 @@
         tank *newTank = [[tank alloc] initWithFrame:frame];
         [tankList addObject: newTank];
         [self.view addSubview:newTank];
+        
+        // update frame
+        CGRect oldFrame = frame;
+        oldFrame.origin.x += 25*i;
+        oldFrame.origin.y += 25*i;
+        frame = oldFrame;
     }
+    
+    //create and add Hero
+    CGRect heroFrame = CGRectMake(125, 370, 100,100);
+    Hero *myHero = [[Hero alloc] initWithFrame:heroFrame];
+    [self.view addSubview:myHero];
 }
 
 - (void)viewDidUnload
