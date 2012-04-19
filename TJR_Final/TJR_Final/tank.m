@@ -15,14 +15,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self doLayout];
+    
         
     }
     return self;
 }
 
+
 -(void) doLayout
 {
+    //change color based on how far back it is
     self.backgroundColor = [UIColor blackColor];
+}
+
+-(void) changeColor: (NSInteger) tanksMade
+{
+    CGFloat newAlpha = .1 + .5/tanksMade;
+    self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:newAlpha];
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.

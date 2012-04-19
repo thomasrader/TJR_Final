@@ -26,6 +26,7 @@
     [super viewDidLoad];
     
 	//create array of tanks
+    tankList = [[NSMutableArray alloc] init];
 
     CGRect frame = CGRectMake(0.,0.,100.,100.);
     for(int i=0; i<6; i++)
@@ -33,7 +34,12 @@
 
         tank *newTank = [[tank alloc] initWithFrame:frame];
         [tankList addObject: newTank];
+        
+        //update tank's color (well alpha?)
+       [newTank changeColor:(NSInteger) [tankList count]];
+        NSLog(@"tank count = %d", (NSInteger) [tankList count]);
         [self.view addSubview:newTank];
+    
         
         // update frame
         CGRect oldFrame = frame;
@@ -83,6 +89,21 @@
     } else {
         return YES;
     }
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"touchesBegan");
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"touchesMoved");
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"touchesEnded");
 }
 
 @end
