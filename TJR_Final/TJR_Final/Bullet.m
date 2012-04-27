@@ -63,6 +63,8 @@
     
     newFrame.origin.y = newFrame.origin.y - fabsf(speed*sin(myAngle));
     self.frame = newFrame;
+    
+
 
         
     
@@ -76,6 +78,9 @@
                                 selector:@selector(update) userInfo:nil repeats:YES];
     
 }
+
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

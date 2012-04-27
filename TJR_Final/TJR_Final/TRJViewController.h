@@ -12,11 +12,17 @@
 
 @interface TRJViewController : UIViewController{
     NSMutableArray *tankList;
+    NSMutableArray *bulletList;
     Hero *myHero;
     BOOL fired;
+    BOOL p1turn;
+    BOOL vsP;
+    NSNotificationCenter * myNotificationCenter;
 }
 
 -(CGPoint) getAngle:(NSSet*)touches;
+-(void) bulletHit;
+-(BOOL) hitTest: (UIView*) one with: (UIView*) two;
 
 /*
 Todo List:

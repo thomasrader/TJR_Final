@@ -14,6 +14,7 @@
     CGPoint myOrigin;
     CGFloat myAngle;
     BOOL left;
+    NSNotification *myNotification;
 
 }
 -(id)initWithFrame:(CGRect)frame WithOrigin:(CGPoint) bulletOrigin WithVector: (CGPoint)bulletVector;
@@ -21,5 +22,6 @@
 -(void) getAngle;
 -(void) update;
 -(void) startMoving;
+
 
 @end

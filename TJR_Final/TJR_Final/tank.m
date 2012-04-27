@@ -33,7 +33,7 @@
 -(void) changeColor: (NSInteger) tanksMade
 {
     CGFloat newAlpha = .1 + .5/tanksMade;
-    self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:newAlpha];
+   // self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:newAlpha];
 
 }
 

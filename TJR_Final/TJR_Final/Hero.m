@@ -28,6 +28,8 @@
     bulletFrame = CGRectMake(0.0,0.0,10.0,10.0);
     CGRect barrelFrame = CGRectMake(self.frame.origin.x+(self.frame.size.width/2)-7.5, self.frame.origin.y-20, 15.0, 50.0);
     myBarrel = [[HeroBarrel alloc] initWithFrame: barrelFrame];
+    myBarrel.backgroundColor = [UIColor grayColor];
+   // [self addSubview: myBarrel];
     
     
 }
@@ -36,6 +38,7 @@
 {
     //touch has where the touch was, this will come from touchesEnded
     CGPoint bulletOrigin = CGPointMake(self.frame.origin.x+40, self.frame.origin.y-20);
+   // CGPoint bulletOrigin = CGPointMake(myBarrel.frame.origin.x+3, myBarrel.frame.origin.y-10);
     Bullet *newBullet = [[Bullet alloc] initWithFrame:bulletFrame WithOrigin: bulletOrigin WithVector:tappedPoint ];
     [self addSubview: newBullet];
     //NSLog(@"Fire!!");
@@ -50,13 +53,23 @@
     CGFloat opposite =  fabsf(tappedPoint.y - myBarrel.frame.origin.y);
     CGFloat adjacent = fabsf(tappedPoint.x - myBarrel.frame.origin.x);
     if(tappedPoint.x >=myBarrel.frame.origin.x)
+    {
+        left = FALSE;
+    }else{
+        left = TRUE;
+    }
 
     CGFloat myAngle = atanf(opposite/adjacent);
   //  NSLog(@"%f",myAngle);
     
     //reset barrel
-    myBarrel.frame = CGRectMake(self.frame.origin.x+(self.frame.size.width/2)-7.5,
-                                self.frame.origin.y-20, 15.0, 50.0);
+    if(left)
+    {
+            myBarrel.transform = CGAffineTransformMakeRotation(myAngle-M_PI_2);
+    }else{
+            myBarrel.transform = CGAffineTransformMakeRotation(M_PI_2 - myAngle);
+    }
+
 
     
 }
