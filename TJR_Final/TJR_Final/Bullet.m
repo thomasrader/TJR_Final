@@ -44,7 +44,7 @@
     }else{
         left = TRUE;
     }
-    myAngle = opposite/adjacent;
+    myAngle = atanf(opposite/adjacent);
     
     
 }
@@ -56,9 +56,9 @@
     
     newFrame = self.frame;
     if(left){
-        newFrame.origin.x = newFrame.origin.x + fabsf(speed*cos(myAngle));
-    }else{
         newFrame.origin.x = newFrame.origin.x - fabsf(speed*cos(myAngle));
+    }else{
+        newFrame.origin.x = newFrame.origin.x + fabsf(speed*cos(myAngle));
     }
     
     newFrame.origin.y = newFrame.origin.y - fabsf(speed*sin(myAngle));

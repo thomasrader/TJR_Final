@@ -16,6 +16,8 @@
     BOOL fired;
 }
 
+-(CGPoint) getAngle:(NSSet*)touches;
+
 /*
 Todo List:
  Multiplayer

@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "Bullet.h"
+#import "HeroBarrel.h"
 
 @interface Hero : UIView
 {
         CGRect bulletFrame;
+        HeroBarrel *myBarrel;
+        BOOL left;
 }
 
 -(void) doLayout;
--(Bullet*) fireBullet: (NSSet*) touch;
--(CGPoint) createVector: (NSSet*) touch;
--(void) updateBarrel: (NSSet*) touch;
+-(Bullet*) fireBullet: (CGPoint) tappedPoint;
+-(void) updateBarrel: (CGPoint) tappedPoint;
+-(HeroBarrel*) getBarrel;
 
 
 @end

@@ -41,6 +41,7 @@
        [newTank changeColor:(NSInteger) [tankList count]];
         NSLog(@"tank count = %d", (NSInteger) [tankList count]);
         [self.view addSubview:newTank];
+
     
         
         // update frame
@@ -54,6 +55,7 @@
     CGRect heroFrame = CGRectMake(125, 370, 100,100);
     myHero = [[Hero alloc] initWithFrame:heroFrame];
     [self.view addSubview:myHero];
+    [self.view addSubview:[myHero getBarrel]];
 
 }
 
@@ -94,6 +96,11 @@
     }
 }
 
+-(CGPoint) getAngle:(NSSet*)touches{
+    CGPoint tappedPoint = [[touches anyObject] locationInView: self.view];
+    return tappedPoint;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//NSLog(@"touchesBegan");
@@ -102,15 +109,16 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//NSLog(@"touchesMoved");
-    [myHero updateBarrel:touches];
+
+    [myHero updateBarrel:[self getAngle: touches]];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	NSLog(@"touchesEnded");
     if(!fired){
-        fired = TRUE;
-        Bullet *newBullet = [myHero fireBullet:touches];
+      //  fired = TRUE;
+        Bullet *newBullet = [myHero fireBullet:[self getAngle: touches]];
         [self.view addSubview: newBullet ];
         [newBullet update];
     }

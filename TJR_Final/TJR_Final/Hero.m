@@ -20,34 +20,48 @@
     return self;
 }
 
+
+
 -(void) doLayout
 {
     self.backgroundColor = [UIColor grayColor];
-    bulletFrame = CGRectMake(0.0,0.0,20.0,20.0);
+    bulletFrame = CGRectMake(0.0,0.0,10.0,10.0);
+    CGRect barrelFrame = CGRectMake(self.frame.origin.x+(self.frame.size.width/2)-7.5, self.frame.origin.y-20, 15.0, 50.0);
+    myBarrel = [[HeroBarrel alloc] initWithFrame: barrelFrame];
+    
+    
 }
 
--(Bullet* ) fireBullet:(NSSet*) touch
+-(Bullet* ) fireBullet:(CGPoint) tappedPoint
 {
     //touch has where the touch was, this will come from touchesEnded
     CGPoint bulletOrigin = CGPointMake(self.frame.origin.x+40, self.frame.origin.y-20);
-    CGPoint bulletVector = [self createVector: touch];
-    Bullet *newBullet = [[Bullet alloc] initWithFrame:bulletFrame WithOrigin: bulletOrigin WithVector:bulletVector ];
+    Bullet *newBullet = [[Bullet alloc] initWithFrame:bulletFrame WithOrigin: bulletOrigin WithVector:tappedPoint ];
     [self addSubview: newBullet];
     //NSLog(@"Fire!!");
     return newBullet;
 }
 
--(CGPoint) createVector: (NSSet*) touch
+
+
+-(void) updateBarrel: (CGPoint) tappedPoint
 {
-    CGPoint tappedPoint = [[touch anyObject] locationInView: self];
-    return tappedPoint;
+
+    CGFloat opposite =  fabsf(tappedPoint.y - myBarrel.frame.origin.y);
+    CGFloat adjacent = fabsf(tappedPoint.x - myBarrel.frame.origin.x);
+    if(tappedPoint.x >=myBarrel.frame.origin.x)
+
+    CGFloat myAngle = atanf(opposite/adjacent);
+  //  NSLog(@"%f",myAngle);
+    
+    //reset barrel
+    myBarrel.frame = CGRectMake(self.frame.origin.x+(self.frame.size.width/2)-7.5,
+                                self.frame.origin.y-20, 15.0, 50.0);
 
     
 }
-
--(void) updateBarrel: (NSSet *) touch
-{
-    CGPoint tappedPoint = [self createVector:touch];
+-(HeroBarrel*) getBarrel{
+    return myBarrel;
 }
 /*
 // Only override drawRect: if you perform custom drawing.
