@@ -7,6 +7,7 @@
 //
 
 #import "tank.h"
+#import "Bullet.h"
 
 @implementation tank
 
@@ -26,6 +27,7 @@
 {
     //change color based on how far back it is
     self.backgroundColor = [UIColor blackColor];
+
 }
 
 -(void) changeColor: (NSInteger) tanksMade
@@ -34,6 +36,8 @@
     self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:newAlpha];
 
 }
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

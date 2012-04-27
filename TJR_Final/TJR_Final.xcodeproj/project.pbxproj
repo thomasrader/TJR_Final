@@ -24,6 +24,7 @@
 		E94E139B1523EB3400D5BCF1 /* tank.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E139A1523EB3400D5BCF1 /* tank.m */; };
 		E94E13A11523F75100D5BCF1 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E13A01523F75100D5BCF1 /* Hero.m */; };
 		E9554092153F9B2E00838135 /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = E9554091153F9B2E00838135 /* Bullet.m */; };
+		E9C5E2B9154B1493004CD0C9 /* HeroBarrel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C5E2B8154B1493004CD0C9 /* HeroBarrel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		E94E13A01523F75100D5BCF1 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
 		E9554090153F9B2E00838135 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
 		E9554091153F9B2E00838135 /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
+		E9C5E2B7154B1493004CD0C9 /* HeroBarrel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroBarrel.h; sourceTree = "<group>"; };
+		E9C5E2B8154B1493004CD0C9 /* HeroBarrel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroBarrel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +133,12 @@
 				E94E137A1523EA9E00D5BCF1 /* TRJViewController.m */,
 				E94E13991523EB3400D5BCF1 /* tank.h */,
 				E94E139A1523EB3400D5BCF1 /* tank.m */,
-				E94E139F1523F75100D5BCF1 /* Hero.h */,
 				E9554090153F9B2E00838135 /* Bullet.h */,
 				E9554091153F9B2E00838135 /* Bullet.m */,
+				E94E139F1523F75100D5BCF1 /* Hero.h */,
 				E94E13A01523F75100D5BCF1 /* Hero.m */,
+				E9C5E2B7154B1493004CD0C9 /* HeroBarrel.h */,
+				E9C5E2B8154B1493004CD0C9 /* HeroBarrel.m */,
 				E94E13681523EA9E00D5BCF1 /* Supporting Files */,
 			);
 			path = TJR_Final;
@@ -282,6 +287,7 @@
 				E94E139B1523EB3400D5BCF1 /* tank.m in Sources */,
 				E94E13A11523F75100D5BCF1 /* Hero.m in Sources */,
 				E9554092153F9B2E00838135 /* Bullet.m in Sources */,
+				E9C5E2B9154B1493004CD0C9 /* HeroBarrel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

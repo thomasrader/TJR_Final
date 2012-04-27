@@ -9,6 +9,7 @@
 #import "TRJViewController.h"
 #import "tank.h"
 #import "Hero.h"
+#import "Bullet.h"
 
 
 @implementation TRJViewController
@@ -24,11 +25,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    fired = FALSE;
     
 	//create array of tanks
     tankList = [[NSMutableArray alloc] init];
 
-    CGRect frame = CGRectMake(0.,0.,100.,100.);
+    CGRect frame = CGRectMake(0.0,0.0,100.0,100.0);
     for(int i=0; i<6; i++)
     {
 
@@ -50,8 +52,9 @@
     
     //create and add Hero
     CGRect heroFrame = CGRectMake(125, 370, 100,100);
-    Hero *myHero = [[Hero alloc] initWithFrame:heroFrame];
+    myHero = [[Hero alloc] initWithFrame:heroFrame];
     [self.view addSubview:myHero];
+
 }
 
 - (void)viewDidUnload
@@ -93,17 +96,24 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"touchesBegan");
+	//NSLog(@"touchesBegan");
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"touchesMoved");
+	//NSLog(@"touchesMoved");
+    [myHero updateBarrel:touches];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	NSLog(@"touchesEnded");
+    if(!fired){
+        fired = TRUE;
+        Bullet *newBullet = [myHero fireBullet:touches];
+        [self.view addSubview: newBullet ];
+        [newBullet update];
+    }
 }
 
 @end

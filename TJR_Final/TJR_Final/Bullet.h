@@ -9,5 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface Bullet : UIView
+{
+    CGPoint myVector;
+    CGPoint myOrigin;
+    CGFloat myAngle;
+    BOOL left;
+
+}
+-(id)initWithFrame:(CGRect)frame WithOrigin:(CGPoint) bulletOrigin WithVector: (CGPoint)bulletVector;
+-(void) doLayout;
+-(void) getAngle;
+-(void) update;
+-(void) startMoving;
 
 @end

@@ -13,7 +13,19 @@
 @interface TRJViewController : UIViewController{
     NSMutableArray *tankList;
     Hero *myHero;
+    BOOL fired;
 }
+
+/*
+Todo List:
+ Multiplayer
+ AI
+ Shooting
+ Target Moving
+ Animations
+ Notification center for bullet hitting
+ 
+*/
 
 
 @end

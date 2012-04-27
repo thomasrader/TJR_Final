@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Bullet.h"
 
 @interface Hero : UIView
+{
+        CGRect bulletFrame;
+}
 
 -(void) doLayout;
+-(Bullet*) fireBullet: (NSSet*) touch;
+-(CGPoint) createVector: (NSSet*) touch;
+-(void) updateBarrel: (NSSet*) touch;
 
 
 @end
