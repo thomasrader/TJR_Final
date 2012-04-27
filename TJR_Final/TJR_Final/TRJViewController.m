@@ -13,6 +13,10 @@
 
 
 @implementation TRJViewController
+@synthesize turnLabel;
+@synthesize p1Label;
+@synthesize p2Label;
+@synthesize pvpSwitch;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +30,10 @@
 {
     [super viewDidLoad];
     fired = FALSE;
+    p1turn = TRUE;
+    turnLabel.textColor = [UIColor grayColor];
+    p1Label.text = @"0";
+    p2Label.text = @"0";
 
     
 	//create array of tanks and bullets
@@ -54,7 +62,7 @@
     }
     
     //create and add Hero
-    CGRect heroFrame = CGRectMake(125, 370, 100,100);
+    CGRect heroFrame = CGRectMake((self.view.frame.size.width/2 -25), self.view.frame.size.height-75, 50,75);
     myHero = [[Hero alloc] initWithFrame:heroFrame];
     [self.view addSubview:myHero];
     [self.view addSubview:[myHero getBarrel]];
@@ -119,11 +127,15 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//NSLog(@"touchesEnded");
+    [self fireBullet:[self getAngle:touches]];
+    }
+-(void) fireBullet: (CGPoint) tappedPoint
+{
     if(!fired){
-      //  fired = TRUE;
-        Bullet *newBullet = [myHero fireBullet:[self getAngle: touches]];
+        fired = TRUE;
+        Bullet *newBullet = [myHero fireBullet:tappedPoint];
         [bulletList addObject: newBullet];
-        [self.view addSubview: newBullet ];
+        [self.view addSubview: newBullet];
         [newBullet update];
         
         //start hittesting
@@ -131,10 +143,7 @@
                                        selector:@selector(bulletHit) userInfo:nil repeats:YES];
         
     }
-}
 
--(void)handleNotification:(NSNotification *) newNotification
-{
     
 }
 
@@ -150,11 +159,21 @@
                 NSLog(@"Hit!"); 
                [myBullet removeFromSuperview];
                [bulletList removeObject:myBullet];
+               if(p1turn){
+                   p1Score +=1;
+                   p1Label.text = [NSString stringWithFormat:@"%d", p1Score];
+               }else{
+                   p2Score +=1;
+                   p2Label.text = [NSString stringWithFormat:@"%d", p2Score];
+               }
+               
+               [self swapPlayers];
            } else if(myBullet.frame.origin.y <1 || myBullet.frame.origin.x <1 || myBullet.frame.origin.x >self.view.frame.size.width){
                [myBullet removeFromSuperview];
                [bulletList removeObject:myBullet];
+               [self swapPlayers];
                
-           //    [[Bullet dealloc] myBullet];
+
            }
 
        }
@@ -185,6 +204,35 @@
         return FALSE;
     }
 
+}
+
+-(void) swapPlayers
+{
+    fired = FALSE;
+    if(p1turn)
+    {
+        myHero.backgroundColor= [UIColor blueColor];
+        [myHero getBarrel].backgroundColor = [UIColor blueColor];
+        turnLabel.text = @"P2's Turn";
+        turnLabel.textColor = [UIColor blueColor];
+        p1turn=FALSE;
+        
+        //use AI
+        if(!pvpSwitch.on){
+            CGPoint aiTouch = CGPointMake(150.0, 300.0);
+            [myHero updateBarrel: aiTouch];
+            [self fireBullet: aiTouch];
+        }
+    }else{
+        myHero.backgroundColor= [UIColor grayColor];
+        [myHero getBarrel].backgroundColor = [UIColor grayColor];
+        turnLabel.text = @"P1's Turn";
+        turnLabel.textColor = [UIColor grayColor];
+        p1turn=TRUE;
+
+    }
+    
+    
 }
 
 @end

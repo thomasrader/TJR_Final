@@ -48,6 +48,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Bid-eu-JWa">
+                                <rect key="frame" x="13" y="425" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PvP" lineBreakMode="tailTruncation" minimumFontSize="10" id="kR2-4b-5L7">
+                                <rect key="frame" x="13" y="396" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -55,6 +66,12 @@
                             <outletCollection property="gestureRecognizers" destination="K1z-2e-fY4" appends="YES" id="6eT-AK-ILH"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="p1Label" destination="xz7-TT-fMP" id="K5Z-gv-Tyn"/>
+                        <outlet property="p2Label" destination="kv2-Qq-laO" id="KPy-Ka-u6K"/>
+                        <outlet property="pvpSwitch" destination="Bid-eu-JWa" id="4SH-Vi-E0h"/>
+                        <outlet property="turnLabel" destination="7H4-vK-s0b" id="e92-iQ-IHT"/>
+                    </connections>
                 </viewController>
                 <tapGestureRecognizer id="K1z-2e-fY4"/>
             </objects>

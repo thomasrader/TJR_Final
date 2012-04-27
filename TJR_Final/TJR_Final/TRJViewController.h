@@ -17,21 +17,28 @@
     BOOL fired;
     BOOL p1turn;
     BOOL vsP;
+    NSInteger p1Score;
+    NSInteger p2Score;
     NSNotificationCenter * myNotificationCenter;
 }
 
 -(CGPoint) getAngle:(NSSet*)touches;
 -(void) bulletHit;
 -(BOOL) hitTest: (UIView*) one with: (UIView*) two;
+-(void) swapPlayers;
+-(void) fireBullet: (CGPoint) tappedPoint;
+
+@property (nonatomic, weak) IBOutlet UILabel *turnLabel;
+@property (nonatomic, weak) IBOutlet UILabel *p1Label;
+@property (nonatomic, weak) IBOutlet UILabel *p2Label;
+@property (nonatomic, weak) IBOutlet UISwitch *pvpSwitch;
 
 /*
 Todo List:
- Multiplayer
- AI
- Shooting
  Target Moving
  Animations
- Notification center for bullet hitting
+ Better graphics
+ Update Score
  
 */
 
