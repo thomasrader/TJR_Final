@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeroBarrel : UIView
+@interface HeroBarrel : UIView{
+        UIColor *myColor;
+}
+
+-(void) reDraw;
+-(void) setColor:(UIColor*)newColor;
 
 @end

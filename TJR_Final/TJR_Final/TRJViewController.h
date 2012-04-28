@@ -27,6 +27,7 @@
 -(BOOL) hitTest: (UIView*) one with: (UIView*) two;
 -(void) swapPlayers;
 -(void) fireBullet: (CGPoint) tappedPoint;
+-(void) moveTank;
 
 @property (nonatomic, weak) IBOutlet UILabel *turnLabel;
 @property (nonatomic, weak) IBOutlet UILabel *p1Label;
@@ -36,9 +37,7 @@
 /*
 Todo List:
  Target Moving
- Animations
  Better graphics
- Update Score
  
 */
 

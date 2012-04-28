@@ -14,18 +14,33 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor clearColor];
+        myColor = [UIColor greenColor];
     }
     return self;
 }
-
-/*
+-(void) setColor:(UIColor *)newColor
+{
+    myColor = newColor;
+}
+-(void) reDraw{
+    [self drawRect: self.bounds];
+}
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    [[UIColor blackColor] setStroke];
+    [myColor  setFill];
+    CGRect myRect = CGRectMake(0, 0, 15, 50);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIBezierPath* aPath = [UIBezierPath bezierPathWithOvalInRect:myRect ];
+    
+    aPath.lineWidth = 5;
+    [aPath fill];
+    [aPath stroke];
+    [self setNeedsDisplay];
 }
-*/
+
 
 @end

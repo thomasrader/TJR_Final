@@ -9,6 +9,8 @@
 #import "Bullet.h"
 #import "math.h"
 
+
+
 @implementation Bullet
 
 - (id)initWithFrame:(CGRect)frame WithOrigin:(CGPoint) bulletOrigin WithVector: (CGPoint) bulletVector;
@@ -31,7 +33,8 @@
 
 -(void) doLayout
 {
-    self.backgroundColor = [UIColor orangeColor];
+    self.backgroundColor = [UIColor clearColor];
+
 }
 
 -(void) getAngle
@@ -51,7 +54,7 @@
 
 -(void) update
 {
-    NSInteger speed = 2;
+    CGFloat speed = 1.0;
     CGRect newFrame;
     
     newFrame = self.frame;
@@ -74,7 +77,7 @@
 
 -(void) startMoving
 {
-    [NSTimer scheduledTimerWithTimeInterval:0.06 target:self
+    [NSTimer scheduledTimerWithTimeInterval:0.020 target:self
                                 selector:@selector(update) userInfo:nil repeats:YES];
     
 }
@@ -82,13 +85,22 @@
 
 
 
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    [[UIColor redColor] setStroke];
+    [[UIColor orangeColor] setFill];
+    CGRect myRect = CGRectMake(0, 0, 10, 10);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIBezierPath* aPath = [UIBezierPath bezierPathWithOvalInRect:
+                           myRect];
+   
+    aPath.lineWidth = 2;
+    [aPath fill];
+    [aPath stroke];
+    [self setNeedsDisplay];
 }
-*/
 
 @end

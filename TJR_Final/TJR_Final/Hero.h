@@ -9,18 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "Bullet.h"
 #import "HeroBarrel.h"
+#import "math.h"
 
 @interface Hero : UIView
 {
         CGRect bulletFrame;
+        CGFloat myAngle;
         HeroBarrel *myBarrel;
         BOOL left;
+        UIColor* myColor;
 }
 
 -(void) doLayout;
 -(Bullet*) fireBullet: (CGPoint) tappedPoint;
 -(void) updateBarrel: (CGPoint) tappedPoint;
 -(HeroBarrel*) getBarrel;
+-(void) setColor:(UIColor*) newColor;
+-(void) reDraw;
 
 
 @end

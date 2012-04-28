@@ -16,6 +16,8 @@
 
 -(void) doLayout;
 -(void) changeColor:(NSInteger)tanksMade;
+-(void) update;
+-(void) newSpeed;
 
 
 @end

@@ -40,7 +40,7 @@
     tankList = [[NSMutableArray alloc] init];
     bulletList = [[NSMutableArray alloc] init];
 
-    CGRect frame = CGRectMake(120.0,200.0,100.0,100.0);
+    CGRect frame = CGRectMake(120.0,100.0,50.0,50.0);
     for(int i=0; i<1; i++)
     {
 
@@ -66,6 +66,12 @@
     myHero = [[Hero alloc] initWithFrame:heroFrame];
     [self.view addSubview:myHero];
     [self.view addSubview:[myHero getBarrel]];
+    
+    //Move tank
+    [NSTimer scheduledTimerWithTimeInterval:0.05 target:self
+                                   selector:@selector(moveTank) userInfo:nil repeats:YES];
+    
+    NSLog(@"%f",self.view.frame.size.width);
     
 
 }
@@ -141,6 +147,7 @@
         //start hittesting
         [NSTimer scheduledTimerWithTimeInterval:0.06 target:self
                                        selector:@selector(bulletHit) userInfo:nil repeats:YES];
+
         
     }
 
@@ -156,7 +163,7 @@
        {
          //  NSLog(@"%f,%f",myBullet.frame.origin.x, myBullet.frame.origin.y);
            if([self hitTest: myTank with: myBullet]){
-                NSLog(@"Hit!"); 
+            
                [myBullet removeFromSuperview];
                [bulletList removeObject:myBullet];
                if(p1turn){
@@ -211,10 +218,11 @@
     fired = FALSE;
     if(p1turn)
     {
-        myHero.backgroundColor= [UIColor blueColor];
-        [myHero getBarrel].backgroundColor = [UIColor blueColor];
+        [myHero setColor:[UIColor blueColor]];
+        [myHero reDraw];
         turnLabel.text = @"P2's Turn";
         turnLabel.textColor = [UIColor blueColor];
+
         p1turn=FALSE;
         
         //use AI
@@ -224,15 +232,23 @@
             [self fireBullet: aiTouch];
         }
     }else{
-        myHero.backgroundColor= [UIColor grayColor];
-        [myHero getBarrel].backgroundColor = [UIColor grayColor];
+        [myHero setColor:[UIColor greenColor]];
+        [myHero reDraw];
         turnLabel.text = @"P1's Turn";
-        turnLabel.textColor = [UIColor grayColor];
+        turnLabel.textColor = [UIColor greenColor];
         p1turn=TRUE;
 
     }
     
     
+}
+
+-(void) moveTank
+{
+    for(tank *newTank in tankList)
+    {
+        [newTank update];
+    }
 }
 
 @end
