@@ -70,7 +70,7 @@
 -(void) newSpeed
 {
     srand(time(NULL));
-    mySpeed = (rand() / RAND_MAX) * 2+3;
+    mySpeed = arc4random()%5 * 2;
 }
 
 // Only override drawRect: if you perform custom drawing.

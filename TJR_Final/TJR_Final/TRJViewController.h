@@ -34,12 +34,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *p2Label;
 @property (nonatomic, weak) IBOutlet UISwitch *pvpSwitch;
 
-/*
-Todo List:
- Target Moving
- Better graphics
- 
-*/
+
 
 
 @end
