@@ -33,6 +33,9 @@
     mySpeed = 2.0;
     left = FALSE;
 
+    CGRect myRect = CGRectMake(0, 0, 50, 50);
+    aPath = [UIBezierPath bezierPathWithOvalInRect:myRect ];
+    aPath.lineWidth = 10;
 }
 
 -(void) changeColor: (NSInteger) tanksMade
@@ -77,16 +80,10 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    [[UIColor blackColor] setStroke];
-    [[UIColor grayColor] setFill];
-    CGRect myRect = CGRectMake(0, 0, 50, 50);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    UIBezierPath* aPath = [UIBezierPath bezierPathWithOvalInRect:myRect ];
-    
-    aPath.lineWidth = 10;
-    [aPath fill];
+    [[UIColor blackColor] set];
     [aPath stroke];
-    [self setNeedsDisplay];
+    [[UIColor grayColor] set];
+    [aPath fill];
 }
 
 

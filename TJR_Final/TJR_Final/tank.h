@@ -10,8 +10,7 @@
 
 @interface tank : UIView
 {
-
-    
+    UIBezierPath *aPath;
 }
 
 -(void) doLayout;

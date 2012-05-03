@@ -16,6 +16,7 @@
     BOOL left;
     NSNotification *myNotification;
 
+    UIBezierPath *aPath;
 }
 -(id)initWithFrame:(CGRect)frame WithOrigin:(CGPoint) bulletOrigin WithVector: (CGPoint)bulletVector;
 -(void) doLayout;

@@ -27,6 +27,9 @@
         [self getAngle];
         [self startMoving];
         
+        CGRect myRect = CGRectMake(0, 0, 10, 10);
+        aPath = [UIBezierPath bezierPathWithOvalInRect:myRect];
+        aPath.lineWidth = 2;
     }
     return self;
 }
@@ -90,17 +93,10 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    [[UIColor redColor] setStroke];
-    [[UIColor orangeColor] setFill];
-    CGRect myRect = CGRectMake(0, 0, 10, 10);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    UIBezierPath* aPath = [UIBezierPath bezierPathWithOvalInRect:
-                           myRect];
-   
-    aPath.lineWidth = 2;
-    [aPath fill];
+    [[UIColor redColor] set];
     [aPath stroke];
-    [self setNeedsDisplay];
+    [[UIColor orangeColor] set];   
+    [aPath fill];
 }
 
 @end

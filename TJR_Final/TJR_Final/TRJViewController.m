@@ -68,7 +68,7 @@
     [self.view addSubview:[myHero getBarrel]];
     
     //Move tank
-    [NSTimer scheduledTimerWithTimeInterval:0.05 target:self
+    [NSTimer scheduledTimerWithTimeInterval:0.02 target:self
                                    selector:@selector(moveTank) userInfo:nil repeats:YES];
     
     NSLog(@"%f",self.view.frame.size.width);
@@ -146,7 +146,7 @@
         
         //start hittesting
         [NSTimer scheduledTimerWithTimeInterval:0.06 target:self
-                                       selector:@selector(bulletHit) userInfo:nil repeats:YES];
+                                       selector:@selector(bulletHit:) userInfo:nil repeats:YES];
 
         
     }
@@ -154,7 +154,7 @@
     
 }
 
--(void) bulletHit
+-(void) bulletHit:(NSTimer*)timer
 {
     for(tank *myTank in tankList)
     {
@@ -162,10 +162,10 @@
        for(Bullet *myBullet in bulletList)
        {
          //  NSLog(@"%f,%f",myBullet.frame.origin.x, myBullet.frame.origin.y);
+           BOOL done = NO;
            if([self hitTest: myTank with: myBullet]){
+               done = YES;
             
-               [myBullet removeFromSuperview];
-               [bulletList removeObject:myBullet];
                if(p1turn){
                    p1Score +=1;
                    p1Label.text = [NSString stringWithFormat:@"%d", p1Score];
@@ -173,14 +173,15 @@
                    p2Score +=1;
                    p2Label.text = [NSString stringWithFormat:@"%d", p2Score];
                }
-               
-               [self swapPlayers];
            } else if(myBullet.frame.origin.y <1 || myBullet.frame.origin.x <1 || myBullet.frame.origin.x >self.view.frame.size.width){
+               done = YES;
+           }
+           
+           if( done ) {
+               [timer invalidate];
                [myBullet removeFromSuperview];
                [bulletList removeObject:myBullet];
                [self swapPlayers];
-               
-
            }
 
        }
